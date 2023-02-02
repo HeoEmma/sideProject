@@ -41,4 +41,9 @@ public class HomeController {
 		return "test";
 	}
 	
+	@RequestMapping("/registration")
+	public String registration() {
+		return "registration/registration";
+	}
+	
 }
