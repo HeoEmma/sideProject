@@ -26,7 +26,6 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="./css/styles.css" rel="stylesheet" />
-	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>To Somewhere</title>
 </head>
@@ -42,6 +41,7 @@
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login">login</a></li>
                     </ul>
                 </div>
             </div>

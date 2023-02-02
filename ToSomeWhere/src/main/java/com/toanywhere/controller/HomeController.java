@@ -1,20 +1,21 @@
-package com.tosomewhere.controller;
+package com.toanywhere.controller;
 
 import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.*;
+import javax.servlet.http.HttpServlet;
+import org.slf4j.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import com.toanywhere.dto.Customer;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
+@Slf4j
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -33,7 +34,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "index";
 	}
 	
 	@RequestMapping("/test")
@@ -45,5 +46,23 @@ public class HomeController {
 	public String registration() {
 		return "registration/registration";
 	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "registration/login";
+	}
+	
+	@RequestMapping("/loginOK")
+	public String loginOK(HttpServlet request, Model model) {
+		return "index";
+	}
+	
+	@RequestMapping("/joininOK")
+	public String joininOK(HttpServlet request, Model model, Customer customer) {
+//		db에 내용 추가.
+		log.info("customer: " + customer);
+		return "redirect:loginOK";
+	}
+	
 	
 }

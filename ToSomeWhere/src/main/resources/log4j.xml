@@ -11,7 +11,13 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.tosomewhere.controller">
+	<logger name="com.toanywhere.controller">
+		<level value="info" />
+	</logger>
+	<logger name="com.toanywhere.dao">
+		<level value="info" />
+	</logger>
+	<logger name="com.toanywhere.service">
 		<level value="info" />
 	</logger>
 	
