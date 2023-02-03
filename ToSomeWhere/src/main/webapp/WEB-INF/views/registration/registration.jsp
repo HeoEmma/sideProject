@@ -31,11 +31,13 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">회원가입</h2>
-                        <form method="POST" action="joininOK" class="register-form" id="register-form">
+                        <!-- <form method="POST" action="joininOK" class="register-form" id="register-form"> -->
+                        <form class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="아이디를 입력하세요."/>
-                                <button type="button" class="btn btn-light btn-sm" style="float:right;">중복확인</button>
+                                <label for="id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="id" id="id" placeholder="아이디를 입력하세요."/>
+                                <button type="button" class="btn btn-light btn-sm" style="float:right;" onclick="idDuplicationChk()">중복확인</button>
+                                <input type="hidden" name="idChk" id="idChk" value="false">
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -46,14 +48,14 @@
                                 <input type="email" name="email" id="email" placeholder="email을 입력하세요."/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="비밀번호를 입력하세요."/>
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요."/>
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="비밀번호를 다시 한 번 입력하세요."/>
+                                <label for="rePassword"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="rePassword" id="rePassword" placeholder="비밀번호를 다시 한 번 입력하세요."/>
                             </div>
-                            <div class="msg">
+                            <div class="msg" id="msg">
                             <!-- 중복된 아이디, 비밀번호 확인과 비밀번호가 다른 경우, 회원가입 가능한 경우 message -->
                             </div>
                             <div class="form-group">
@@ -66,7 +68,7 @@
                                 </label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="button" name="signup" id="signup" class="form-submit" value="Register" onclick="registChk()"/>
                             </div>
                         </form>
                     </div>
@@ -81,19 +83,6 @@
 
     </div>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/registration.css">
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script >
-    	$('#mainNav').css('backgroundColor','rgb(0, 0, 0, 0.2)');
-    </script>
-
-<link href="css/registration.css" rel="stylesheet">
-		
 <!-- Footer -->
 <footer class="bg-dark text-center text-white"  style="background-color: rgba(0, 0, 0, 0.2);">
 	<!-- Copyright -->
@@ -103,6 +92,16 @@
 	<!-- Copyright -->
 </footer>
 <!-- Footer -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/registration.css">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!-- JS -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/registration.js"></script>
+
+		
         
     </body>
 </html>

@@ -17,8 +17,6 @@
 	<link rel="icon" href="resources/img/favicon.png" />
     <!-- CSS -->
     <link rel="stylesheet" href="css/registration.css">
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>To Somewhere</title>
@@ -68,13 +66,16 @@
 	</section>
 </div>
 
-
+	<!-- CSS -->
+    <link rel="stylesheet" href="css/registration.css">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
-    <script >
+<!--     <script >
     	$('#mainNav').css('backgroundColor','rgb(0, 0, 0, 0.2)');
-    </script>
+    </script> -->
 
 <link href="css/registration.css" rel="stylesheet">
 		
