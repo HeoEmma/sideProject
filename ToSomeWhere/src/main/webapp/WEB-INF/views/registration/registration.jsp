@@ -15,16 +15,10 @@
 <title>to Anywhere</title>
 	<!-- Favicon-->
 	<link rel="icon" href="resources/img/favicon.png" />
-	<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="./css/styles.css" rel="stylesheet" />
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>To Somewhere</title>
 </head>
 <body id="page-top">
-
-<div class="main">
-
+	<div class="main">
         <!-- Sign up form -->
         <section class="signup">
             <div class="container">
@@ -79,29 +73,20 @@
                 </div>
             </div>
         </section>
-
-
     </div>
 
-<!-- Footer -->
-<footer class="bg-dark text-center text-white"  style="background-color: rgba(0, 0, 0, 0.2);">
-	<!-- Copyright -->
-	<div class="text-center p-3 text-center text-muted" >
-	  	Copyright &copy; 2023 - to ANYWHERE
-	</div>
-	<!-- Copyright -->
-</footer>
-<!-- Footer -->
+	<!-- Footer -->
+	<footer class="bg-dark text-center text-white" >
+		<!-- Copyright -->
+		<div class="text-center p-3 text-center text-muted" >
+		  	Copyright &copy; 2023 - to ANYWHERE
+		</div>
+	</footer>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/registration.css">
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <!-- JS -->
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/registration.js"></script>
-
-		
-        
-    </body>
+</body>
 </html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.toanywhere.mapper.CustomerMapper">
+<!-- 
+	authority => 조금 더 생각해본 후 erd 수정
+	1: seller
+	2: customer
+ -->
+
+	<!-- addNewCustomer -->
+	<insert id="addNewCustomer" parameterType="customer"> 
+		insert into customer (customerId, id, name, email, password, registdate, authority)
+        	values (customer_idx_seq.nextval, #{id}, #{name}, #{email}, #{password}, sysdate, 2)
+	</insert>
+	
+</mapper>

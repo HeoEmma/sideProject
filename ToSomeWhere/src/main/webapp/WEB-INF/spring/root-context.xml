@@ -6,31 +6,26 @@
              xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
              xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
-
+	<!-- oracle DB 연결 정보 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
         <property name="username" value="tsw"/>
         <property name="password" value="0000"/>
     </bean>
-
+	<!-- 쿼리 경로 지정 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:mapper/mybatis-config.xml"/>
-        <!-- <property name="mapperLocations" value="classpath:mappers/*Mapper.xml"/> -->
+        <property name="configLocation" value="classpath:toanywhere/mapper/mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:toanywhere/mapper/*Mapper.xml"/>
     </bean>
-    <!--<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-        <beans:constructor-arg index="0" ref="sqlSessionFactory"/>
-    </beans:bean>-->
-
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <tx:annotation-driven/>
 
-    <mybatis-spring:scan base-package="com.toanywhere.dao"/>
-    <!-- <mybatis-spring:scan base-package="mapper"/> -->
+    <mybatis-spring:scan base-package="com.toanywhere.mapper"/>
 
     <context:annotation-config/>
 

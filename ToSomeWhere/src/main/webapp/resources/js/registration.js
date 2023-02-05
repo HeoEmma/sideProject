@@ -57,7 +57,8 @@ function registChk() {
 				'email': $('#email').val(),
 				'password': $('#password').val()
 		}
-		console.log(data);
+//		console.log(data);
+//		회원 정보 db 저장 및 index페이지로 이동
 		requestJoinOK(data);
 
 	} 
@@ -77,6 +78,9 @@ function requestJoinOK(data){
 		contentType: 'application/json; charset=utf-8',
 		success : data => {
 			console.log('success');
+			console.log('db저장완료');
+//			가입된 회원 정보로 로그인 시켜 세션에 저장 후 index 페이지로 이동.
+			location.href = "loginOK"
 		},
 		error: e => {
 			console.log("(Request failed) " + e.status + ': ' + e.statusText);
@@ -85,6 +89,10 @@ function requestJoinOK(data){
 	
 }
 
+// 회원가입 직후 가입된 회원 정보를 세션값으로 저장시킨 후 index 페이지로 이동
+function goToIndexPageAfterLogin(){
+	console.log('goToIndexPageAfterLogin() 함수 실행.');
+}
 
 
 

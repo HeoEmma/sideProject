@@ -5,7 +5,9 @@ import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +21,9 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class HomeController {
+	
+//	@Autowired
+//	private SqlSession sqlSession;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	

@@ -10,9 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CustomerImpl implements CustomerService {
 	
-	@Autowired
-	@Setter
-	private com.toanywhere.dao.CustomerDAO mapper;
+	@Setter(onMethod_ = @Autowired)
+	private com.toanywhere.mapper.CustomerMapper mapper;
 
 	@Override
 	public void addNewCustomer(com.toanywhere.dto.Customer customer) {
