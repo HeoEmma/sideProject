@@ -13,4 +13,9 @@
         	values (customer_idx_seq.nextval, #{id}, #{name}, #{email}, #{password}, sysdate, 2)
 	</insert>
 	
+	<!-- For registration check that id is or not -->
+	<select id="compareIdInDBWithInputId" parameterType="String" resultType="String">
+		select id from customer where id=#{id, jdbcType=VARCHAR}
+	</select>
+	
 </mapper>
