@@ -29,9 +29,9 @@
                         <hr class="divider divider-light" />
                         <!-- <p class="text-black-75 mb-4">Start your trip with TO ANYWHERE. We can help you to figure out what you really want to go. Let's have such a great trip!</p> -->
                         <div class="col-lg-8 text-center" style="margin:auto;">
-                       			다음에 머무를 숙소를 찾아보세요.<br/>
+                       			숙소를 등록해보세요.<br/>
                        			<p>
-                       				다양한 숙소가 한곳에!
+                       				리뷰 및 좋아요를 확인하세요.
                        			</p>
                    		</div>
                     </div>

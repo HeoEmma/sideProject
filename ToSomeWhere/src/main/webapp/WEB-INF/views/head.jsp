@@ -3,9 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%-- <%@ page import="java.util.Map" %>
-<%@ page import="java.util.Iterator" %> --%>
-<%-- <%@ page session="false"%> --%>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page session="true"%>
+    <%
+        request.setCharacterEncoding("UTF-8");
+        System.out.printf("SESSION: " + session.getAttribute("customerInfo"));
+        if(session.getAttribute("customerInfo") != null){
+	        Map<String, String[]> map = request.getParameterMap();
+	        for (Map.Entry<String, String[]> entry : map.entrySet()) {
+	                System.out.printf("%s : %s%n", entry.getKey(), String.join(", ", entry.getValue()));
+	        }
+        }
+    %>        
+    
 <html>
 <head>
 <meta charset="utf-8" />
@@ -37,11 +48,16 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">toANYWHERE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">서비스</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login">login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">문의하기</a></li>
+                        <c:if test="${customerInfo.getName() != null}">
+                        	<li class="nav-item"><a class="nav-link" href="logout">${customerInfo.getName()} 님 로그아웃</a></li>
+                        </c:if>
+                        <c:if test="${customerInfo.getName() == null}">
+                        	<li class="nav-item"><a class="nav-link" href="login">login</a></li>
+                        </c:if>
                     </ul>
                 </div>
             </div>

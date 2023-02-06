@@ -1,45 +1,91 @@
 package com.toanywhere.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.PrintWriter;
+import java.net.http.HttpResponse;
+import java.text.DateFormat;
+import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.session.SqlSession;
+import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.support.SessionStatus;
 
-import com.toanywhere.service.CustomerService;
+import com.toanywhere.dto.CustomerInfo;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/customer")
 @Slf4j
 public class CustomerController {
 	
-	@Setter(onMethod_= @Autowired)
-	private CustomerService service;
+//	@Autowired
+//	private SqlSession sqlSession;
 	
-	@PostMapping(value="/new")
-	@ResponseBody
-	public void addNewCustomer(@RequestBody com.toanywhere.dto.Customer customer) {
-		log.info("addNewCustomer()");
-//		log.info("customer: " + customer);
-		service.addNewCustomer(customer);
+	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );
+		
+		return "index";
 	}
 	
-	@GetMapping(value="/idDuplicationChk")
-	@ResponseBody
-	public String idDuplicationChk(@RequestParam("id") String id) {
-		log.info("idDuplicationChk()");
-//		log.info("id: " + id);
-		boolean isUseableId = service.compareIdInDBWithInputId(id);
-//		log.info("isUseableId: " + isUseableId);
-		return String.valueOf(isUseableId);
+	@RequestMapping("index")
+	public String index() {
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/test")
+	public String test() {
+		return "test";
+	}
+	
+	@RequestMapping("/registration")
+	public String registration() {
+		return "customer/registration/registration";
+	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "customer/registration/login";
+	}
+	
+	@RequestMapping("/loginOK")
+	public String loginOK(HttpServletRequest request, Model model) {
+		return "index";
+	}
+	
+	@RequestMapping("/joininOK")
+	public String joininOK(@RequestParam("rePassword")String rePassword, Model model, CustomerInfo customer) {
+//		db�� ���� �߰�.
+		log.info("customer: " + customer);
+		log.info("customer.getPassowrd(): " + customer.getPassword());
+		log.info("rePassword: " + rePassword);
+		
+		return "redirect:loginOK";
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session, HttpServletResponse response) {
+		log.info("logout() in HomeController class");
+		session.removeAttribute("customerInfo"); //세션 제거
+		return "redirect:/";
 	}
 	
 }

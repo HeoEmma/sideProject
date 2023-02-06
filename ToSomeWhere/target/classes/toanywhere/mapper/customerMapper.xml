@@ -18,4 +18,9 @@
 		select id from customer where id=#{id, jdbcType=VARCHAR}
 	</select>
 	
+	<!-- customerInfoOne -->
+	<select id="customerInfoOne" parameterType="String" resultType="customer">
+		select * from customer where id = #{id}
+	</select>
+	
 </mapper>

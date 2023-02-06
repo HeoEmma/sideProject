@@ -140,7 +140,7 @@ function registChk() {
 // 회원가입 정보를 db에 저장하는 콜백함수
 function requestJoinOK(data){
 	console.log('requestJoinOK()');
-//	console.log(data);
+	console.log(data);
 	
 	$.ajax({
 		url: './customer/new',
@@ -151,6 +151,8 @@ function requestJoinOK(data){
 //			console.log('success');
 //			console.log('db저장완료');
 			console.log('controller를 통해 회원가입된 정보 session 영역에 저장 작업 필요')
+//			데이터를 가져오는 작업을 한 후, 그 데이터를 login.js 의 goToIndexPage() 함수의 파라미터로 넘겨준다.
+			console.log(data); //''
 //			console.log('registration.js 비밀번호 유효성 검사, 이메일 유효성 검사')
 //			가입된 회원 정보로 로그인 시켜 세션에 저장 후 index 페이지로 이동.
 //			location.href = "loginOK"
