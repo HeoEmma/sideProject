@@ -45,10 +45,7 @@ function idDuplicationChk(){
 
 // form태그에 입력된 데이터의 유효성 검사 및 올바른 비밀번호 데이터 입력에 대한 확인.
 function registChk() {
-	console.log('registChk()');
-
-
-
+//	console.log('registChk()');
 	
 	// 비밀번호 유효성 검사 (정규식)
 	// 특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내의 암호 정규식
@@ -134,28 +131,22 @@ function registChk() {
 		requestJoinOK(data);
 	}
 
-
 }
 
 // 회원가입 정보를 db에 저장하는 콜백함수
 function requestJoinOK(data){
-	console.log('requestJoinOK()');
-	console.log(data);
+//	console.log('requestJoinOK()');
+//	console.log(data);
 	
+	// 새로운 회원정보를 db에 저장하고 해당 행의 값을 얻어와 자동 로그인(세션 영역 저장)
 	$.ajax({
 		url: './customer/new',
 		type: 'post',
 		data: JSON.stringify(data), 
 		contentType: 'application/json; charset=utf-8',
 		success : data => {
-//			console.log('success');
-//			console.log('db저장완료');
-			console.log('controller를 통해 회원가입된 정보 session 영역에 저장 작업 필요')
-//			데이터를 가져오는 작업을 한 후, 그 데이터를 login.js 의 goToIndexPage() 함수의 파라미터로 넘겨준다.
-			console.log(data); //''
-//			console.log('registration.js 비밀번호 유효성 검사, 이메일 유효성 검사')
-//			가입된 회원 정보로 로그인 시켜 세션에 저장 후 index 페이지로 이동.
-//			location.href = "loginOK"
+//			console.log(data);
+			goToIndexPage(data)
 		},
 		error: e => {
 			console.log("(Request failed) " + e.status + ': ' + e.statusText);
@@ -165,8 +156,21 @@ function requestJoinOK(data){
 }
 
 // 회원가입 직후 가입된 회원 정보를 세션값으로 저장시킨 후 index 페이지로 이동(삭제 가능성 있음)
-function goToIndexPageAfterLogin(){
-	console.log('goToIndexPageAfterLogin() 함수 실행.');
+function goToIndexPage(id){
+	$.ajax({
+		url: './customer/loginInfoToSession',
+		type: 'post',
+		data: JSON.stringify(data),
+		contentType: 'application/json; charset=utf-8',
+		success : data => {
+//			console.log('success');
+//			console.log(data);
+			location.href= data;
+		},
+		error: e => {
+			console.log("(Request failed) " + e.status + ': ' + e.statusText);
+		}
+	})
 }
 
 

@@ -45,7 +45,7 @@ function loginAfterchkCustomerInfo(id){
 			},
 			contentType: 'application/json; charset=utf-8',
 			success : data => {
-				console.log('success');
+//				console.log('success');
 //				console.log(data);
 				if (data == null || data == undefined || data == ''){
 //					'넘어온 데이터 없음 => 아이디가 틀렸음.'
@@ -81,7 +81,7 @@ function loginAfterchkCustomerInfo(id){
 
 // 세션 영역에 정보 저장 및 index 페이지로 분기
 function loginOK(){
-	console.log('loginOK()');
+//	console.log('loginOK()');
 	
 //	가입된 회원 정보로 로그인 시켜 세션에 저장 후 index 페이지로 이동.
 //	location.href = "loginOK"
@@ -89,20 +89,14 @@ function loginOK(){
 
 // 회원가입 직후 가입된 회원 정보를 세션값으로 저장시킨 후 index 페이지로 이동(삭제 가능성 있음)
 function goToIndexPage(data){
-	console.log('goToIndexPage() 함수 실행.');
-	console.log('id: ' + data.id);
-	console.log('password: ' + data.password);
-	console.log('name: ' + data.name);
-	console.log('customerId: ' + data.customerId);
-	console.log('email: ' + data.email);
 	$.ajax({
 		url: './customer/loginInfoToSession',
 		type: 'post',
 		data: JSON.stringify(data),
 		contentType: 'application/json; charset=utf-8',
 		success : data => {
-			console.log('success');
-			console.log(data);
+//			console.log('success');
+//			console.log(data);
 			location.href= data;
 		},
 		error: e => {

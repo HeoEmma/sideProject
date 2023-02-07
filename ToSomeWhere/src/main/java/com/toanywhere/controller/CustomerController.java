@@ -27,26 +27,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CustomerController {
 	
-//	@Autowired
-//	private SqlSession sqlSession;
 	
-	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+	@RequestMapping("/")
+	public String home() {
+		log.info("index()");
 		return "index";
 	}
 	
-	@RequestMapping("index")
+	@RequestMapping("/index")
 	public String index() {
 		return "redirect:/";
 	}
@@ -87,5 +75,6 @@ public class CustomerController {
 		session.removeAttribute("customerInfo"); //세션 제거
 		return "redirect:/";
 	}
+
 	
 }

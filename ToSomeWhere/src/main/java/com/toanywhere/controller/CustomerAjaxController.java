@@ -27,10 +27,27 @@ public class CustomerAjaxController {
 	
 	@PostMapping(value="/new")
 	@ResponseBody
-	public void addNewCustomer(@RequestBody com.toanywhere.dto.CustomerInfo customer) {
+	public Map<String, Object> addNewCustomer(@RequestBody com.toanywhere.dto.CustomerInfo customer) {
 		log.info("addNewCustomer()");
 //		log.info("customer: " + customer);
 		service.addNewCustomer(customer);
+		//json 배열 처리용
+		JSONObject jsonObj = new JSONObject();
+		HashMap<String, Object> hmap = new HashMap<String, Object>();
+		
+//		log.info("isRightId()");
+		log.info("id: " + customer.getId());
+		CustomerInfo customerInfoOne = service.getCustomerInfoOne(customer.getId());
+		log.info("customerInfoOne: " + customerInfoOne);
+//		log.info("customerInfoOne.getId(): " + customerInfoOne.getId());
+//		log.info("customerInfoOne.getPassword(): " + customerInfoOne.getPassword());
+		hmap.put("customerId", customerInfoOne.getCustomerId());
+		hmap.put("id", customerInfoOne.getId());
+		hmap.put("password", customerInfoOne.getPassword());
+		hmap.put("name", customerInfoOne.getName());
+		hmap.put("email", customerInfoOne.getEmail());
+		jsonObj = new JSONObject(hmap);
+		return jsonObj;
 	}
 	
 	@GetMapping(value="/idDuplicationChk")

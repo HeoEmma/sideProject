@@ -1,9 +1,8 @@
-<%@ page import="java.util.Date" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="java.util.Date" %>
 <%@include file="/WEB-INF/views/head.jsp"%>
+<link href="/css/indexHost.css" />
+<!-- <script src = "/js/indexScripts.js" /> -->
     
         <!-- Masthead-->
         <header class="masthead">
@@ -20,6 +19,23 @@
                 </div>
             </div>
         </header>
+
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/portfolio/fullsize/3.jpg" alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Fresh Coffee</span>
+                            <span class="section-heading-lower">Worth Drinking</span>
+                        </h2>
+                        <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!</p>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About-->
         <section class="page-section bg-primary" id="about">
             <div class="container px-4 px-lg-5">
@@ -34,104 +50,6 @@
                        				리뷰 및 좋아요를 확인하세요.
                        			</p>
                    		</div>
-                    </div>
-                </div>
-            </div>
-            <div class="container px-4 px-lg-5 p-3"  style="background-color:#FFF0DB;">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-	                        <form action="#" class="justify-content-center">
-								<table class="justify-content-center" style="margin:auto;">
-	                        	<!-- 목적지 -->
-		                        	<thead>
-			                        	<tr>
-			                        		<td colspan="4">
-			                        			목적지를 입력해주세요.
-			                        		</td>
-			                        	</tr>
-		                        	</thead>
-			                        <tbody>
-			                        	<tr>
-			                        		<td colspan="1" >
-			                        			<img alt="bed" src="img/icon/bed.png" align="middle">
-			                        		</td>
-			                        		<td colspan="3">
-			                        			<input type="text" placeholder="어디로 향하시나요?">
-			                        		</td>
-			                        	</tr>
-			                        	<!-- 체크인/아웃 -->
-			                        	<tr>
-			                        		<td colspan="1" rowspan="2">
-			                        			<img alt="calendar-black" src="img/icon/cal-white.png"  align="middle">
-			                        		</td>
-			                        		<td colspan="3">
-			                        			체크인
-			                        		</td>
-			                        		<td colspan="1" rowspan="2">
-			                        			<img alt="calendar-white" src="img/icon/cal-black.png" align="middle">
-			                        		</td>
-			                        		<td colspan="3">
-			                        			체크아웃
-			                        		</td>
-			                        	</tr>
-			                        	<tr>
-			                        		<td colspan="1"></td>
-			                        		<td colspan="1">
-			                        			<input type="date">
-			                        		</td>
-			                        		<td colspan="1"></td>
-			                        		<td colspan="1">
-			                        			<input type="date">
-			                        		</td>
-			                        	</tr>
-			                        	<!-- 객실 수, 숙박 인원(성인/아동) -->
-			                        	<tr >
-			                        		<td colspan="1" rowspan="2">
-			                        			<img alt="customer" src="img/icon/customer.png" align="middle">
-			                        		</td>
-			                        		<td colspan="4">
-			                        			객실 수와 숙박 인원수
-			                        		</td>
-			                        	</tr>	
-			                        	<tr>
-			                        		<td>
-			                        		</td>
-			                        		<td>
-			                        			<div class="btn-group" align="right">
-												  <div class="btn-group" >
-												    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">성인</button>
-												    <div class="dropdown-menu">
-												    	<div>
-												      		인원 <input type="number" value="2" size="10px"> 명
-												      	</div>
-												    </div>
-												  </div>
-												  <div class="btn-group" >
-												    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">아동</button>
-												    <div class="dropdown-menu">
-												      <input type="number" value="2" size="10px">
-												    </div>
-												  </div>
-												  <div class="btn-group" >
-												    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">객실</button>
-												    <div class="dropdown-menu">
-												      <input type="number" value="1" size="10px">
-												    </div>
-												  </div>
-												</div>
-			                        		</td>
-			                        	</tr>
-			                        	<!-- 검색 버튼 -->
-			                        	<tr>
-			                        		
-			                        		<td colspan="4" align="center">
-			                        			<button type="submit" class="btn btn-light btn-xl">검색!</button>
-			                        		</td>
-			                        		<td></td><td></td>
-			                        	</tr>
-		                        	</tbody>
-		                        </table>
-	                        </form>
                     </div>
                 </div>
             </div>
@@ -188,8 +106,8 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="..." />
+                        <a class="portfolio-box" href="/img/portfolio/fullsize/1.jpg" title="Project Name">
+                            <img class="img-fluid" src="/img/portfolio/thumbnails/1.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -197,8 +115,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="..." />
+                        <a class="portfolio-box" href="/img/portfolio/fullsize/2.jpg" title="Project Name">
+                            <img class="img-fluid" src="/img/portfolio/thumbnails/2.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -206,8 +124,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="..." />
+                        <a class="portfolio-box" href="/img/portfolio/fullsize/3.jpg" title="Project Name">
+                            <img class="img-fluid" src="/img/portfolio/thumbnails/3.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -215,8 +133,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="..." />
+                        <a class="portfolio-box" href="/img/portfolio/fullsize/4.jpg" title="Project Name">
+                            <img class="img-fluid" src="/img/portfolio/thumbnails/4.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -224,8 +142,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg" title="Project Name">
-                            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="..." />
+                        <a class="portfolio-box" href="/img/portfolio/fullsize/5.jpg" title="Project Name">
+                            <img class="img-fluid" src="/img/portfolio/thumbnails/5.jpg" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -233,8 +151,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="resources/img/portfolio/fullsize/6.jpg" title="Project Name">
-                            <img class="img-fluid" src="resources/img/portfolio/thumbnails/6.jpg" alt="..." />
+                        <a class="portfolio-box" href="/resources/img/portfolio/fullsize/6.jpg" title="Project Name">
+                            <img class="img-fluid" src="/resources/img/portfolio/thumbnails/6.jpg" alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">Project Name</div>
@@ -246,7 +164,7 @@
         </div>
         
         <!-- Contact 회원 가입 시 활용할 코드-->
-        <!-- <section class="page-section" id="contact">
+        <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
@@ -313,7 +231,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
         <section class="page-section" id="contact">
         	<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
 		        <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -325,6 +243,6 @@
 		        </div>
 	        </div>
         </section>
-        
+        <script src="js/scripts.js"></script>
  <%@include file="/WEB-INF/views/foot.jsp"%>       
 
