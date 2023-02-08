@@ -51,7 +51,7 @@
 		                    </div>
 		                </form>
 		                <div class="social-login">
-		                    <span class="social-label">로그인 with </span>
+		                    <span class="social-label">다른 방법으로 로그인 </span>
 		                    <ul class="socials">
 		                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
 		                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>

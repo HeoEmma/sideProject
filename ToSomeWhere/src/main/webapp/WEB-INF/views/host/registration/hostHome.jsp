@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page import="java.util.Date" %>
-<%@include file="/WEB-INF/views/head.jsp"%>
+<%@include file="/WEB-INF/views/host/head.jsp"%>
 <link href="/css/indexHost.css" />
 <!-- <script src = "/js/indexScripts.js" /> -->
     
@@ -244,5 +244,5 @@
 	        </div>
         </section>
         <script src="js/scripts.js"></script>
- <%@include file="/WEB-INF/views/foot.jsp"%>       
+ <%@include file="/WEB-INF/views/host/footHost.jsp"%>       
 

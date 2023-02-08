@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@include file="/WEB-INF/views/head.jsp"%>
+<%@include file="/WEB-INF/views/customer/head.jsp"%>
     
         <!-- Masthead-->
         <header class="masthead">
@@ -326,5 +326,5 @@
 	        </div>
         </section>
         
- <%@include file="/WEB-INF/views/foot.jsp"%>       
+ <%@include file="/WEB-INF/views/customer/foot.jsp"%>       
 

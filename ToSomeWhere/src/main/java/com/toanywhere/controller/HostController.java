@@ -23,6 +23,11 @@ public class HostController {
 		return "host/registration/hostHome";
 	}
 	
-	
+//	to join in
+	@RequestMapping("registrationHost")
+	public String registrationHost() {
+		log.info("registrationHost() in HostController class");
+		return "host/registration/registrationHost";
+	}
 
 }
