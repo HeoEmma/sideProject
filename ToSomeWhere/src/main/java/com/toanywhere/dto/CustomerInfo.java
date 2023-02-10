@@ -8,10 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 @ToString
 public class CustomerInfo {
 	
-	int customerId;
-	String id;
-	String name;
-	String email;
-	String password;
+	private int customerId;
+	private String id;
+	private String name;
+	private String email;
+	private String password;
 
 }

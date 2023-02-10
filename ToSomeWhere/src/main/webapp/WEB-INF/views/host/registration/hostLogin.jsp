@@ -125,7 +125,6 @@
 		<!-- Copyright -->
 		Copyright &copy; 2023 - to ANYWHERE
 	</footer>
-
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/registration.css">
 	<!-- JS -->
